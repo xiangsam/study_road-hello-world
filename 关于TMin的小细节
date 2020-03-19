@@ -15,3 +15,22 @@ ISO90:32位程序 unsigned
       64位程序 unsigned
 ISO99:32位程序 unsigned
       64位程序 unsigned
+```
+int dpos32 = (-2147483648 > 0);
+int hpos32 = (0x80000000 > 0);
+printf("%d %d",dpos32,hpos32);
+```
+对ISO90标准，32位程序输出1 1
+            64位程序输出0 1
+对ISO99标准，32位程序输出0 1
+            64位程序输出0 1
+            
+但是对于
+```
+int dtmin32 = -2147483648;
+int dposa = (dtmin32 > 0);
+int htmin32 = 0x80000000;
+int hposa = (htmin32 > 0);
+printf("%d %d",dposa,hposa);
+```
+无论32位或64位，无论ISO90或ISO99 ,输出都是：0 0
