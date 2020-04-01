@@ -1,5 +1,6 @@
 在C语言中，表示TMin（32位为例）通常不用-2147483648,而用-2147483647-1
 reason:
+When the compiler encounters a number of the form -X, it first determines the data type and value for X and then negates it.
 对于十进制与十六进制数c的处理为
 ISO90:Decimal  int-long-unsigned-unsigned long
       Hexadecimal  int-unsigned-long-unsigned long
